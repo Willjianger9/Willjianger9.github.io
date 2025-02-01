@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 interface Point {
   x: number
@@ -45,7 +45,7 @@ export function InteractiveGrid({
       const width = window.innerWidth + 2 * margin
       const height = window.innerHeight + 2 * margin
       
-      pointsRef.current = Array.from({ length: points }, (_, i) => ({
+      pointsRef.current = Array.from({ length: points }, () => ({
         x: Math.random() * width - margin,
         y: Math.random() * height - margin,
         baseX: Math.random() * width - margin,
