@@ -50,9 +50,9 @@ const About: React.FC = () => {
         </div>
 
         {/* Personal Gallery */}
-        <div className="mt-16 relative overflow-hidden">
+        <div className="mt-16 relative">
           {/* Bulletin Board Line */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-purple-500/50 shadow-lg"></div>
+          <div className="absolute -top-8 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-purple-500/50 shadow-lg"></div>
           
           {/* Image Gallery */}
           <div className="relative w-full overflow-hidden">
