@@ -12,64 +12,83 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    title: "Software Engineer Intern",
-    company: "Codeium",
-    location: "San Francisco, CA",
-    period: "June 2023 - September 2023",
-    description: [
-      "Developed and maintained core features of the Codeium AI code completion tool",
-      "Collaborated with team members to improve user experience and system performance",
-      "Implemented new functionality using modern web technologies"
-    ],
-    technologies: ["TypeScript", "React", "Node.js"]
-  },
-  {
-    title: "Software Development Intern",
-    company: "Tech Company A",
+    title: "Fullstack Developer",
+    company: "Creative Labs",
     location: "Los Angeles, CA",
-    period: "January 2023 - April 2023",
+    period: "September 2024 - December 2024",
     description: [
-      "Built and maintained full-stack web applications using modern frameworks",
-      "Optimized database queries resulting in 40% faster load times",
-      "Collaborated with cross-functional teams to implement new features"
+      "Developed the SwipeSmart iOS app to help users maximize cashback rewards by tracking credit card offers",
+      "Redesigned the data structure for credit card reward categories to support unique colors and icons",
+      "Improved development with continuous integration to resolve bugs and enhance app performance",
+      "Integrated designer-created views into the application for a seamless, visually cohesive user experience"
     ],
-    technologies: ["Python", "Django", "PostgreSQL", "React"]
+    technologies: ["iOS", "Swift", "Continuous Integration"]
   },
   {
-    title: "Research Assistant",
-    company: "UCLA Computer Science Department",
-    location: "Los Angeles, CA",
-    period: "September 2022 - December 2022",
+    title: "Lead Website Developer",
+    company: "UCLA Robot Intelligence Laboratory",
+    location: "Los Angeles, CA", 
+    period: "December 2024 - Present",
     description: [
-      "Conducted research on machine learning algorithms for computer vision",
-      "Implemented and tested various neural network architectures",
-      "Published findings in departmental research paper"
+      "Designed and launched the official website with a responsive interface to showcase research projects",
+      "Leveraged HTML, CSS, and JavaScript to create dynamic, cross-browser compatible web pages",
+      "Engineered responsive animations with engaging UI/UX elements and smooth animations",
+      "Integrated version control using Git and created deployment workflows to streamline updates and maintenance"
     ],
-    technologies: ["Python", "PyTorch", "TensorFlow", "OpenCV"]
+    technologies: ["HTML", "CSS", "JavaScript", "Git", "Web Development"]
   },
   {
-    title: "Web Development Intern",
-    company: "Tech Startup B",
+    title: "Multimedia Designer",
+    company: "YouTube",
     location: "Remote",
-    period: "June 2022 - August 2022",
+    period: "April 2021 – October 2023",
     description: [
-      "Developed responsive web interfaces using modern frameworks",
-      "Implemented user authentication and authorization systems",
-      "Created reusable component library for future projects"
+      "Produced and edited 40+ videos, achieving over 140,000 views on YouTube",
+      "Implemented search engine optimization strategies, generating over 1.2 million video impressions",
+      "Developed and refined video content strategies to increase audience retention and grow channel visibility"
     ],
-    technologies: ["JavaScript", "Vue.js", "Firebase", "Tailwind CSS"]
+    technologies: ["Video Editing", "SEO", "Content Strategy"]
+  }
+];
+
+const research: Experience[] = [
+  {
+    title: "Undergraduate Researcher",
+    company: "UCLA Robot Intelligence Laboratory",
+    location: "Los Angeles, CA",
+    period: "September 2024 – Present",
+    description: [
+      "Extracted 3D gaze coordinates from Meta's Aria glasses to track movements from a mobile ego perspective",
+      "Engineered a homography-based solution to align gaze data to a robot-mounted camera",
+      "Improved robot policy learning by incorporating human visual attention to adapt behavior during tasks"
+    ],
+    technologies: ["Computer Vision", "Robotics", "Homography", "Meta Aria Glasses"]
   },
   {
-    title: "Software Engineering Project Lead",
-    company: "University Project",
+    title: "Undergraduate Research Intern",
+    company: "Interconnected & Integrated Bioelectronics Laboratory",
     location: "Los Angeles, CA",
-    period: "January 2022 - May 2022",
+    period: "December 2024 – Present",
     description: [
-      "Led a team of 5 students in developing a full-stack web application",
-      "Managed project timeline and deliverables using Agile methodology",
-      "Implemented CI/CD pipeline for automated testing and deployment"
+      "Contributed to development of a ferrobotic platform for automated viral detection in clinical samples",
+      "Developed machine learning models to predict diseases from biomarkers using colorimetric RT-LAMP assays",
+      "Evaluated machine learning models to determine performance in multi-class disease classification"
     ],
-    technologies: ["React", "Node.js", "MongoDB", "Docker", "GitHub Actions"]
+    technologies: ["Machine Learning", "Bioelectronics", "RT-LAMP", "Disease Prediction"]
+  },
+  {
+    title: "Computer Vision Research Assistant",
+    company: "University of Waterloo, Vision and Image Processing Laboratory",
+    location: "Waterloo, ON",
+    period: "July 2024 – August 2024",
+    description: [
+      "Annotated 100+ hockey games of footage to develop a robust dataset for training machine learning models",
+      "Designed a YOLO-based object detection and tracking system to track player movements with 97% accuracy",
+      "Developed an extreme gradient boosting algorithm using 150+ videos to evaluate performance",
+      "Utilized homography techniques to map player positions and warp visualized data to original footage",
+      "Integrated SAM2 to automate player mask creation to create precise overlay of masks on visualized data"
+    ],
+    technologies: ["YOLO", "Computer Vision", "Machine Learning", "SAM2", "Homography"]
   }
 ];
 
@@ -125,6 +144,72 @@ const ExperienceSection: React.FC = () => {
                   {experience.technologies && (
                     <div className="flex flex-wrap gap-2">
                       {experience.technologies.map((tech, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 text-sm rounded-full bg-white/10 text-gray-300 hover:bg-white/20 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+              
+              {/* Spacer for alternating layout */}
+              <div className="flex-1 md:w-1/2" />
+            </div>
+          ))}
+        </div>
+
+        <h2 className="text-3xl font-bold text-white my-12 text-center">
+          Research
+        </h2>
+        
+        <div className="relative">
+          {/* Vertical line */}
+          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-[2px] bg-gradient-to-b from-green-400/80 to-teal-500/80" />
+          
+          {research.map((researchItem, index) => (
+            <div
+              key={index}
+              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
+                index % 2 === 0 ? 'md:flex-row-reverse' : ''
+              }`}
+            >
+              {/* Timeline dot */}
+              <div className="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-teal-500 border-4 border-black/50" />
+              
+              {/* Content */}
+              <div className="flex-1 md:w-1/2">
+                <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40">
+                  <h3 className="text-xl font-semibold text-white mb-1">
+                    {researchItem.title}
+                  </h3>
+                  <h4 className="text-lg text-green-400 mb-4">
+                    {researchItem.company}
+                  </h4>
+                  
+                  <div className="flex items-center gap-4 text-sm text-gray-300 mb-4">
+                    <div className="flex items-center gap-1">
+                      <Calendar className="w-4 h-4" />
+                      {researchItem.period}
+                    </div>
+                    <div className="flex items-center gap-1">
+                      <MapPin className="w-4 h-4" />
+                      {researchItem.location}
+                    </div>
+                  </div>
+                  
+                  <ul className="list-disc list-inside space-y-2 text-gray-300 mb-4">
+                    {researchItem.description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                  
+                  {researchItem.technologies && (
+                    <div className="flex flex-wrap gap-2">
+                      {researchItem.technologies.map((tech, i) => (
                         <span
                           key={i}
                           className="px-3 py-1 text-sm rounded-full bg-white/10 text-gray-300 hover:bg-white/20 transition-colors"
