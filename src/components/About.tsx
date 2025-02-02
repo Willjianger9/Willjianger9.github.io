@@ -60,7 +60,7 @@ const About: React.FC = () => {
           {/* Profile Picture */}
           <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform transition-transform duration-300 hover:scale-105">
             <img 
-              src="William Jiang.jpg" 
+              src="assets/William Jiang.jpg" 
               alt="William Jiang" 
               className="w-full h-full object-cover object-center"
             />
