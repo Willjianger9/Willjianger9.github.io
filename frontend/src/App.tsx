@@ -8,6 +8,7 @@ import ExperienceSection from './components/ExperienceSection';
 import ProjectsSection from './components/ProjectsSection';
 import { InteractiveGrid } from './components/ui/interactive-grid';
 import ResumePage from './components/ResumePage';
+import ResearchPaperPage from './components/ResearchPaperPage';
 import './App.css';
 
 const App: React.FC = () => {
@@ -29,6 +30,7 @@ const App: React.FC = () => {
               <Route path="/experience" element={<ExperienceSection />} />
               <Route path="/projects" element={<ProjectsSection />} />
               <Route path="/resume" element={<ResumePage />} />
+              <Route path="/research-paper" element={<ResearchPaperPage />} />
             </Routes>
           </main>
 

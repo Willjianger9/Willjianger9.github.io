@@ -93,9 +93,6 @@ const About: React.FC = () => {
 
         {/* Personal Gallery */}
         <div className="mt-16 relative">
-          {/* Bulletin Board Line */}
-          <div className="absolute -top-8 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-purple-500/50 shadow-lg"></div>
-          
           {/* Image Gallery */}
           <div 
             className="relative w-full overflow-hidden"
@@ -115,14 +112,6 @@ const About: React.FC = () => {
                   key={`${imageName}-${index}`}
                   className="relative flex-shrink-0 mx-6"
                 >
-                  {/* Pushpin */}
-                  <div 
-                    className="absolute -top-4 left-1/2 -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full shadow-md z-10"
-                    style={{
-                      transform: 'rotate(45deg)'
-                    }}
-                  />
-                  
                   {/* Image Container */}
                   <div 
                     className="relative bg-white/10 backdrop-blur-lg rounded-xl border border-white/10 p-2"

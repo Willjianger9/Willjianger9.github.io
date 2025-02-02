@@ -5,31 +5,35 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
+  image: string;
   codeUrl: string;
   demoUrl: string;
 }
 
 const projects: Project[] = [
   {
-    title: "Project 1",
-    description: "A modern web application built with React and TypeScript",
-    technologies: ["React", "TypeScript", "Tailwind CSS"],
-    codeUrl: "#",
-    demoUrl: "#"
+    title: "URIL Website",
+    description: "Designed and developed UCLA Robot Intelligence Laboratory's website, showcasing research in robot learning, human-robot collaboration, and autonomous systems.The site features project descriptions, team profiles, and publication archives.",
+    technologies: ["HTML", "CSS", "JavaScript", "GitHub"],
+    image: "/uril-full.png",
+    codeUrl: "https://github.com/UCLA-Robot-Intelligence-Lab/UCLA-Robot-Intelligence-Lab.github.io",
+    demoUrl: "https://ucla-robot-intelligence-lab.github.io/"
   },
   {
-    title: "Project 2",
-    description: "Full-stack application with real-time features",
-    technologies: ["Node.js", "Express", "MongoDB"],
-    codeUrl: "#",
-    demoUrl: "#"
+    title: "Unity Nonprofits",
+    description: "A platform that allows users to discover local nonprofits by entering their zip code. Built with TypeScript, FastAPI, and Playwright, the project simplifies community engagement by providing instant access to nearby volunteer opportunities.",
+    technologies: ["TypeScript", "FastAPI", "NodeJS", "NextJS", "MelissaAPI"],
+    image: "/Unity_Nonprofits.jpg",
+    codeUrl: "https://github.com/toomzheng/unity-nonprofits",
+    demoUrl: "https://devpost.com/software/unity-nonprofits?ref_content=user-portfolio&ref_feature=in_progress"
   },
   {
-    title: "Project 3",
-    description: "Mobile-first responsive web application",
-    technologies: ["React Native", "Firebase", "Redux"],
-    codeUrl: "#",
-    demoUrl: "#"
+    title: "AI Hockey Analytics Platform",
+    description: "Developed a hockey analytics system that predicts scoring probabilities in 1v1 situations using computer vision and XGBoost regression. The system analyzes player positioning through video footage, tracking spatial relationships to calculate a success metric to provide data-driven insights for defensive strategy optimization.",
+    technologies: ["Python", "OpenCV", "TensorFlow", "Pandas", "XGBoost"],
+    image: "/Hockey_Analytics.png",
+    codeUrl: "https://github.com/Willjianger9/1v1-Success-Metric-Pipeline",
+    demoUrl: "/research-paper"
   }
 ];
 
@@ -52,7 +56,14 @@ const ProjectsSection: React.FC = () => {
               key={index}
               className="bg-black/30 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40"
             >
-              <div className="aspect-video bg-gradient-to-br from-blue-400/10 to-purple-500/10 rounded-t-lg" />
+              <div 
+                className="aspect-video rounded-t-lg"
+                style={{
+                  backgroundImage: `url(${project.image})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }} 
+              />
               <div className="p-6">
                 <h3 className="text-xl font-semibold text-white mb-2">
                   {project.title}

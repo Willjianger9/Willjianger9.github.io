@@ -15,14 +15,25 @@ const experiences: Experience[] = [
     title: "Fullstack Developer",
     company: "Creative Labs",
     location: "Los Angeles, CA",
-    period: "September 2024 - December 2024",
+    period: "September 2023 - December 2023",
     description: [
-      "Developed the SwipeSmart iOS app to help users maximize cashback rewards by tracking credit card offers",
-      "Redesigned the data structure for credit card reward categories to support unique colors and icons",
-      "Improved development with continuous integration to resolve bugs and enhance app performance",
-      "Integrated designer-created views into the application for a seamless, visually cohesive user experience"
+      "Developed and maintained web applications using React and TypeScript",
+      "Collaborated with cross-functional teams to design and implement new features",
+      "Optimized application performance and improved user experience"
     ],
-    technologies: ["iOS", "Swift", "Continuous Integration"]
+    technologies: ["React", "TypeScript", "Node.js", "GraphQL"]
+  },
+  {
+    title: "Unity Nonprofits",
+    company: "Unity Nonprofits",
+    location: "Remote",
+    period: "January 2023 - Present",
+    description: [
+      "Created a custom API to fetch and process nonprofit data",
+      "Developed a user-friendly frontend for easy nonprofit discovery",
+      "Implemented web scraping techniques to gather comprehensive nonprofit information"
+    ],
+    technologies: ["TypeScript", "FastAPI", "Playwright", "Postman", "nGrok"]
   },
   {
     title: "Lead Website Developer",

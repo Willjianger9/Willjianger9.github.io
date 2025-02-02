@@ -11,14 +11,14 @@ const Navbar: React.FC = () => {
             <span className="text-xl font-bold text-white">William Jiang</span>
           </Link>
           <div className="hidden md:flex items-center gap-6">
+            <Link to="/about" className="text-base text-gray-300 hover:text-white transition-colors">
+              About
+            </Link>
             <Link to="/experience" className="text-base text-gray-300 hover:text-white transition-colors">
               Experience
             </Link>
             <Link to="/projects" className="text-base text-gray-300 hover:text-white transition-colors">
               Projects
-            </Link>
-            <Link to="/about" className="text-base text-gray-300 hover:text-white transition-colors">
-              About
             </Link>
           </div>
         </div>
