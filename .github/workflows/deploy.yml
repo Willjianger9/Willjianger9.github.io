@@ -30,7 +30,7 @@ jobs:
       
       - name: Build
         env:
-          GITHUB_PAGES: true
+          GITHUB_PAGES: 'true'
         run: |
           npm run build
           ls -R dist
