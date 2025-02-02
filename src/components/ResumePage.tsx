@@ -8,7 +8,7 @@ const ResumePage: React.FC = () => {
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-white">My Resume</h1>
           <a
-            href="/resume.pdf"
+            href="/Willjianger9.github.io/resume.pdf"
             download
             className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium border border-white/20 text-white bg-white/10 rounded-md hover:bg-white/20 transition-colors"
           >
@@ -25,7 +25,7 @@ const ResumePage: React.FC = () => {
             borderRadius: '0.5rem'
           }}>
             <iframe 
-              src="/resume.pdf#view=fit&pagemode=none&scrollbar=0&toolbar=0&navpanes=0" 
+              src="/Willjianger9.github.io/resume.pdf#view=fit&pagemode=none&scrollbar=0&toolbar=0&navpanes=0" 
               width="100%" 
               height="100%" 
               title="Resume PDF"

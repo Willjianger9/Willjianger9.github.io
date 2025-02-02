@@ -17,7 +17,7 @@ const projects: Project[] = [
     title: "URIL Website",
     description: "Designed and developed UCLA Robot Intelligence Laboratory's website, showcasing research in robot learning, human-robot collaboration, and autonomous systems.The site features project descriptions, team profiles, and publication archives.",
     technologies: ["HTML", "CSS", "JavaScript", "GitHub"],
-    image: "/uril-full.png",
+    image: "/Willjianger9.github.io/uril-full.png",
     codeUrl: "https://github.com/UCLA-Robot-Intelligence-Lab/UCLA-Robot-Intelligence-Lab.github.io",
     demoUrl: "https://ucla-robot-intelligence-lab.github.io/"
   },
@@ -25,7 +25,7 @@ const projects: Project[] = [
     title: "Unity Nonprofits",
     description: "A platform that allows users to discover local nonprofits by entering their zip code. Built with TypeScript, FastAPI, and Playwright, the project simplifies community engagement by providing instant access to nearby volunteer opportunities.",
     technologies: ["TypeScript", "FastAPI", "NodeJS", "NextJS", "MelissaAPI"],
-    image: "/Unity_Nonprofits.jpg",
+    image: "/Willjianger9.github.io/Unity_Nonprofits.jpg",
     codeUrl: "https://github.com/toomzheng/unity-nonprofits",
     demoUrl: "https://devpost.com/software/unity-nonprofits?ref_content=user-portfolio&ref_feature=in_progress"
   },
@@ -33,7 +33,7 @@ const projects: Project[] = [
     title: "AI Hockey Analytics Platform",
     description: "Developed a hockey analytics system that predicts scoring probabilities in 1v1 situations using computer vision and XGBoost regression. The system analyzes player positioning through video footage, tracking spatial relationships to calculate a success metric to provide data-driven insights for defensive strategy optimization.",
     technologies: ["Python", "OpenCV", "TensorFlow", "Pandas", "XGBoost"],
-    image: "/Hockey_Analytics.png",
+    image: "/Willjianger9.github.io/Hockey_Analytics.png",
     codeUrl: "https://github.com/Willjianger9/1v1-Success-Metric-Pipeline",
     researchRoute: "/research-paper"
   }
