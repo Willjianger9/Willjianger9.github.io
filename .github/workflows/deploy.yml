@@ -24,10 +24,21 @@ jobs:
           cache: 'npm'
       
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm ci
+          npm list vite react react-dom
       
       - name: Build
-        run: npm run build
+        run: |
+          npm run build
+          ls -R dist
+      
+      - name: Check build output
+        run: |
+          echo "Contents of dist:"
+          cat dist/index.html
+          echo "\n\nJS files:"
+          ls dist/assets/*.js
       
       - name: Setup Pages
         uses: actions/configure-pages@v4
