@@ -1,16 +1,58 @@
-import React from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 
 const imageFiles = [
-  'IMG_1453.jpg',
-  'IMG_3748.JPG',
-  'IMG_6128.JPG',
-  'IMG_7433.JPG',
-  'IMG_8725.JPG',
-  'DSC05887.JPEG',
-  'C74ECB18-483E-42B7-8A14-A30DBBF2CD60.JPG'
+  'gallery_image_1.jpg',
+  'gallery_image_2.jpg',
+  'gallery_image_3.jpg',
+  'gallery_image_4.jpg',
+  'gallery_image_5.jpg',
+  'gallery_image_6.jpg',
+  'gallery_image_7.jpg',
+  'gallery_image_8.jpg',
+  'gallery_image_9.jpg'
 ];
 
 const About: React.FC = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [offset, setOffset] = useState(0);
+  const animationFrameRef = useRef<number | null>(null);
+  const scrollSpeedRef = useRef(1); // Pixels per frame
+  const [isHovering, setIsHovering] = useState(false);
+
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    const container = containerRef.current;
+    const containerWidth = container.scrollWidth / 2; // Total width of one set of images
+
+    const animate = () => {
+      // Only update offset if not hovering
+      if (!isHovering) {
+        setOffset(prevOffset => {
+          const newOffset = prevOffset + scrollSpeedRef.current;
+          
+          // Reset offset when it exceeds the container width
+          return newOffset >= containerWidth ? 0 : newOffset;
+        });
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    // Start the animation
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    // Cleanup function
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, [isHovering]);
+
+  // Duplicate images to create seamless scroll
+  const repeatedImages = [...imageFiles, ...imageFiles];
+
   return (
     <section id="about" className="relative py-20 bg-transparent overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -55,10 +97,20 @@ const About: React.FC = () => {
           <div className="absolute -top-8 left-0 right-0 h-1 bg-gradient-to-r from-blue-400/50 to-purple-500/50 shadow-lg"></div>
           
           {/* Image Gallery */}
-          <div className="relative w-full overflow-hidden">
-            <div className="animate-infinite-scroll flex">
-              {/* Duplicate images for seamless looping */}
-              {[...imageFiles, ...imageFiles].map((imageName, index) => (
+          <div 
+            className="relative w-full overflow-hidden"
+            onMouseEnter={() => setIsHovering(true)}
+            onMouseLeave={() => setIsHovering(false)}
+          >
+            <div 
+              ref={containerRef}
+              className="flex"
+              style={{ 
+                transform: `translateX(-${offset}px)`,
+                transition: 'transform linear'
+              }}
+            >
+              {repeatedImages.map((imageName, index) => (
                 <div 
                   key={`${imageName}-${index}`}
                   className="relative flex-shrink-0 mx-6"
@@ -79,7 +131,7 @@ const About: React.FC = () => {
                     }}
                   >
                     <img 
-                      src={`/images/${imageName}`} 
+                      src={`/images/converted/${imageName}`} 
                       alt={`Gallery image ${index + 1}`}
                       className="w-64 h-64 object-cover rounded-lg"
                     />
