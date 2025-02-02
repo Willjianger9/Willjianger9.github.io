@@ -2,7 +2,7 @@ import React from 'react';
 import { Download } from 'lucide-react';
 
 const ResearchPaperPage: React.FC = () => {
-  const pdfUrl = '/Willjianger9.github.io/Research_Paper.pdf';
+  const pdfUrl = 'Research_Paper.pdf';
 
   return (
     <section className="relative py-24 px-6 overflow-hidden">
