@@ -5,6 +5,7 @@ export default defineConfig({
   base: '/Willjianger9.github.io/',
   plugins: [react()],
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         assetFileNames: (assetInfo) => {
