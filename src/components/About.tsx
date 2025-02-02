@@ -60,7 +60,7 @@ const About: React.FC = () => {
           {/* Profile Picture */}
           <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform transition-transform duration-300 hover:scale-105">
             <img 
-              src="/Willjianger9.github.io/assets/William Jiang.jpg" 
+              src="William Jiang.jpg" 
               alt="William Jiang" 
               className="w-full h-full object-cover object-center"
             />
@@ -120,7 +120,7 @@ const About: React.FC = () => {
                     }}
                   >
                     <img 
-                      src={`/Willjianger9.github.io/images/converted/${imageName}`} 
+                      src={`/images/converted/${imageName}`} 
                       alt={`Gallery image ${index + 1}`}
                       className="w-64 h-64 object-cover rounded-lg"
                     />
