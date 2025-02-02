@@ -1,0 +1,24 @@
+﻿2025-02-02T23:06:38.9245290Z ##[group]Run echo "Contents of dist:"
+2025-02-02T23:06:38.9245883Z [36;1mecho "Contents of dist:"[0m
+2025-02-02T23:06:38.9246337Z [36;1mcat dist/index.html[0m
+2025-02-02T23:06:38.9246770Z [36;1mecho "\n\nJS files:"[0m
+2025-02-02T23:06:38.9247241Z [36;1mls dist/assets/*.js[0m
+2025-02-02T23:06:38.9287358Z shell: /usr/bin/bash -e {0}
+2025-02-02T23:06:38.9287785Z ##[endgroup]
+2025-02-02T23:06:38.9350326Z Contents of dist:
+2025-02-02T23:06:38.9360101Z <!DOCTYPE html>
+2025-02-02T23:06:38.9360482Z <html lang="en">
+2025-02-02T23:06:38.9360806Z   <head>
+2025-02-02T23:06:38.9361057Z     <meta charset="UTF-8" />
+2025-02-02T23:06:38.9361446Z     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+2025-02-02T23:06:38.9362245Z     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+2025-02-02T23:06:38.9362736Z     <title>William Jiang</title>
+2025-02-02T23:06:38.9363139Z     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+2025-02-02T23:06:38.9363753Z     <script type="module" crossorigin src="/Willjianger9.github.io/assets/index-gUewMEdN.js"></script>
+2025-02-02T23:06:38.9364831Z     <link rel="stylesheet" crossorigin href="/Willjianger9.github.io/assets/index.css">
+2025-02-02T23:06:38.9365230Z   </head>
+2025-02-02T23:06:38.9365410Z   <body>
+2025-02-02T23:06:38.9365594Z     <div id="root"></div>
+2025-02-02T23:06:38.9365874Z   </body>
+2025-02-02T23:06:38.9366111Z </html>\n\nJS files:
+2025-02-02T23:06:38.9373350Z dist/assets/index-gUewMEdN.js

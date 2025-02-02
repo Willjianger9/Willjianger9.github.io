@@ -1,0 +1,67 @@
+﻿2025-02-02T23:06:25.1212471Z ##[group]Run actions/checkout@v4
+2025-02-02T23:06:25.1213751Z with:
+2025-02-02T23:06:25.1214825Z   repository: Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:25.1216172Z   token: ***
+2025-02-02T23:06:25.1216903Z   ssh-strict: true
+2025-02-02T23:06:25.1217647Z   ssh-user: git
+2025-02-02T23:06:25.1218407Z   persist-credentials: true
+2025-02-02T23:06:25.1219279Z   clean: true
+2025-02-02T23:06:25.1220046Z   sparse-checkout-cone-mode: true
+2025-02-02T23:06:25.1220966Z   fetch-depth: 1
+2025-02-02T23:06:25.1221713Z   fetch-tags: false
+2025-02-02T23:06:25.1222492Z   show-progress: true
+2025-02-02T23:06:25.1223264Z   lfs: false
+2025-02-02T23:06:25.1223972Z   submodules: false
+2025-02-02T23:06:25.1224855Z   set-safe-directory: true
+2025-02-02T23:06:25.1225957Z ##[endgroup]
+2025-02-02T23:06:25.3122926Z Syncing repository: Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:25.3127146Z ##[group]Getting Git version info
+2025-02-02T23:06:25.3129802Z Working directory is '/home/runner/work/Willjianger9.github.io/Willjianger9.github.io'
+2025-02-02T23:06:25.3133484Z [command]/usr/bin/git version
+2025-02-02T23:06:25.3152244Z git version 2.48.1
+2025-02-02T23:06:25.3196853Z ##[endgroup]
+2025-02-02T23:06:25.3223640Z Temporarily overriding HOME='/home/runner/work/_temp/0222b9e1-86b3-4646-a73e-878a506abcf7' before making global git config changes
+2025-02-02T23:06:25.3226645Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-02T23:06:25.3231256Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Willjianger9.github.io/Willjianger9.github.io
+2025-02-02T23:06:25.3269620Z Deleting the contents of '/home/runner/work/Willjianger9.github.io/Willjianger9.github.io'
+2025-02-02T23:06:25.3273517Z ##[group]Initializing the repository
+2025-02-02T23:06:25.3278749Z [command]/usr/bin/git init /home/runner/work/Willjianger9.github.io/Willjianger9.github.io
+2025-02-02T23:06:25.3346777Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-02T23:06:25.3349067Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-02T23:06:25.3351222Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-02T23:06:25.3353321Z hint:
+2025-02-02T23:06:25.3354683Z hint: 	git config --global init.defaultBranch <name>
+2025-02-02T23:06:25.3355934Z hint:
+2025-02-02T23:06:25.3357135Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-02T23:06:25.3358822Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-02T23:06:25.3360319Z hint:
+2025-02-02T23:06:25.3361216Z hint: 	git branch -m <name>
+2025-02-02T23:06:25.3363113Z Initialized empty Git repository in /home/runner/work/Willjianger9.github.io/Willjianger9.github.io/.git/
+2025-02-02T23:06:25.3366831Z [command]/usr/bin/git remote add origin https://github.com/Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:25.3399757Z ##[endgroup]
+2025-02-02T23:06:25.3401138Z ##[group]Disabling automatic garbage collection
+2025-02-02T23:06:25.3403277Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-02T23:06:25.3514410Z ##[endgroup]
+2025-02-02T23:06:25.3516747Z ##[group]Setting up auth
+2025-02-02T23:06:25.3518720Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-02T23:06:25.3523501Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-02T23:06:25.3764565Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-02T23:06:25.3794128Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-02T23:06:25.4032573Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-02T23:06:25.4071299Z ##[endgroup]
+2025-02-02T23:06:25.4073630Z ##[group]Fetching the repository
+2025-02-02T23:06:25.4082970Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +88eb9dcccffcc4cce079ede19f4f1c51a34c5767:refs/remotes/origin/main
+2025-02-02T23:06:27.2370719Z From https://github.com/Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:27.2372087Z  * [new ref]         88eb9dcccffcc4cce079ede19f4f1c51a34c5767 -> origin/main
+2025-02-02T23:06:27.2396628Z ##[endgroup]
+2025-02-02T23:06:27.2397190Z ##[group]Determining the checkout info
+2025-02-02T23:06:27.2398951Z ##[endgroup]
+2025-02-02T23:06:27.2403817Z [command]/usr/bin/git sparse-checkout disable
+2025-02-02T23:06:27.2441506Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-02T23:06:27.2469674Z ##[group]Checking out the ref
+2025-02-02T23:06:27.2473419Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-02-02T23:06:28.1039058Z Switched to a new branch 'main'
+2025-02-02T23:06:28.1041748Z branch 'main' set up to track 'origin/main'.
+2025-02-02T23:06:28.1077438Z ##[endgroup]
+2025-02-02T23:06:28.1119220Z [command]/usr/bin/git log -1 --format=%H
+2025-02-02T23:06:28.1142886Z 88eb9dcccffcc4cce079ede19f4f1c51a34c5767

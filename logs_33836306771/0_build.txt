@@ -1,0 +1,341 @@
+﻿2025-02-02T23:06:23.7591802Z Current runner version: '2.321.0'
+2025-02-02T23:06:23.7617315Z ##[group]Operating System
+2025-02-02T23:06:23.7618065Z Ubuntu
+2025-02-02T23:06:23.7618495Z 24.04.1
+2025-02-02T23:06:23.7619087Z LTS
+2025-02-02T23:06:23.7619570Z ##[endgroup]
+2025-02-02T23:06:23.7620053Z ##[group]Runner Image
+2025-02-02T23:06:23.7620706Z Image: ubuntu-24.04
+2025-02-02T23:06:23.7621210Z Version: 20250126.1.0
+2025-02-02T23:06:23.7622147Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20250126.1/images/ubuntu/Ubuntu2404-Readme.md
+2025-02-02T23:06:23.7623572Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20250126.1
+2025-02-02T23:06:23.7624685Z ##[endgroup]
+2025-02-02T23:06:23.7625177Z ##[group]Runner Image Provisioner
+2025-02-02T23:06:23.7625849Z 2.0.422.1
+2025-02-02T23:06:23.7626311Z ##[endgroup]
+2025-02-02T23:06:23.7627388Z ##[group]GITHUB_TOKEN Permissions
+2025-02-02T23:06:23.7629464Z Contents: read
+2025-02-02T23:06:23.7630024Z Metadata: read
+2025-02-02T23:06:23.7630809Z Pages: write
+2025-02-02T23:06:23.7631340Z ##[endgroup]
+2025-02-02T23:06:23.7634753Z Secret source: Actions
+2025-02-02T23:06:23.7635798Z Prepare workflow directory
+2025-02-02T23:06:23.7936285Z Prepare all required actions
+2025-02-02T23:06:23.7972007Z Getting action download info
+2025-02-02T23:06:23.9902425Z Download action repository 'actions/checkout@v4' (SHA:11bd71901bbe5b1630ceea73d27597364c9af683)
+2025-02-02T23:06:24.0771609Z Download action repository 'actions/setup-node@v4' (SHA:1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a)
+2025-02-02T23:06:24.3714868Z Download action repository 'actions/configure-pages@v4' (SHA:1f0c5cde4bc74cd7e1254d0cb4de8d49e9068c7d)
+2025-02-02T23:06:24.5713541Z Download action repository 'actions/upload-pages-artifact@v3' (SHA:56afc609e74202658d3ffba0e8f6dda462b719fa)
+2025-02-02T23:06:24.8069826Z Getting action download info
+2025-02-02T23:06:24.8993573Z Download action repository 'actions/upload-artifact@v4' (SHA:65c4c4a1ddee5b72f698fdd19549f0f0fb45cf08)
+2025-02-02T23:06:25.0394805Z Complete job name: build
+2025-02-02T23:06:25.1212499Z ##[group]Run actions/checkout@v4
+2025-02-02T23:06:25.1213761Z with:
+2025-02-02T23:06:25.1214833Z   repository: Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:25.1216182Z   token: ***
+2025-02-02T23:06:25.1216908Z   ssh-strict: true
+2025-02-02T23:06:25.1217651Z   ssh-user: git
+2025-02-02T23:06:25.1218413Z   persist-credentials: true
+2025-02-02T23:06:25.1219287Z   clean: true
+2025-02-02T23:06:25.1220051Z   sparse-checkout-cone-mode: true
+2025-02-02T23:06:25.1220970Z   fetch-depth: 1
+2025-02-02T23:06:25.1221717Z   fetch-tags: false
+2025-02-02T23:06:25.1222497Z   show-progress: true
+2025-02-02T23:06:25.1223268Z   lfs: false
+2025-02-02T23:06:25.1223976Z   submodules: false
+2025-02-02T23:06:25.1224861Z   set-safe-directory: true
+2025-02-02T23:06:25.1225968Z ##[endgroup]
+2025-02-02T23:06:25.3122993Z Syncing repository: Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:25.3127172Z ##[group]Getting Git version info
+2025-02-02T23:06:25.3129905Z Working directory is '/home/runner/work/Willjianger9.github.io/Willjianger9.github.io'
+2025-02-02T23:06:25.3133500Z [command]/usr/bin/git version
+2025-02-02T23:06:25.3152277Z git version 2.48.1
+2025-02-02T23:06:25.3196877Z ##[endgroup]
+2025-02-02T23:06:25.3223671Z Temporarily overriding HOME='/home/runner/work/_temp/0222b9e1-86b3-4646-a73e-878a506abcf7' before making global git config changes
+2025-02-02T23:06:25.3226657Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-02T23:06:25.3231277Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Willjianger9.github.io/Willjianger9.github.io
+2025-02-02T23:06:25.3269654Z Deleting the contents of '/home/runner/work/Willjianger9.github.io/Willjianger9.github.io'
+2025-02-02T23:06:25.3273542Z ##[group]Initializing the repository
+2025-02-02T23:06:25.3278777Z [command]/usr/bin/git init /home/runner/work/Willjianger9.github.io/Willjianger9.github.io
+2025-02-02T23:06:25.3346837Z hint: Using 'master' as the name for the initial branch. This default branch name
+2025-02-02T23:06:25.3349075Z hint: is subject to change. To configure the initial branch name to use in all
+2025-02-02T23:06:25.3351237Z hint: of your new repositories, which will suppress this warning, call:
+2025-02-02T23:06:25.3353327Z hint:
+2025-02-02T23:06:25.3354696Z hint: 	git config --global init.defaultBranch <name>
+2025-02-02T23:06:25.3355947Z hint:
+2025-02-02T23:06:25.3357142Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2025-02-02T23:06:25.3358827Z hint: 'development'. The just-created branch can be renamed via this command:
+2025-02-02T23:06:25.3360325Z hint:
+2025-02-02T23:06:25.3361226Z hint: 	git branch -m <name>
+2025-02-02T23:06:25.3363123Z Initialized empty Git repository in /home/runner/work/Willjianger9.github.io/Willjianger9.github.io/.git/
+2025-02-02T23:06:25.3366840Z [command]/usr/bin/git remote add origin https://github.com/Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:25.3399777Z ##[endgroup]
+2025-02-02T23:06:25.3401154Z ##[group]Disabling automatic garbage collection
+2025-02-02T23:06:25.3403291Z [command]/usr/bin/git config --local gc.auto 0
+2025-02-02T23:06:25.3514458Z ##[endgroup]
+2025-02-02T23:06:25.3516765Z ##[group]Setting up auth
+2025-02-02T23:06:25.3518737Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-02T23:06:25.3523520Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-02T23:06:25.3764603Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-02T23:06:25.3794157Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-02T23:06:25.4033090Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2025-02-02T23:06:25.4071330Z ##[endgroup]
+2025-02-02T23:06:25.4073654Z ##[group]Fetching the repository
+2025-02-02T23:06:25.4083005Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +88eb9dcccffcc4cce079ede19f4f1c51a34c5767:refs/remotes/origin/main
+2025-02-02T23:06:27.2370796Z From https://github.com/Willjianger9/Willjianger9.github.io
+2025-02-02T23:06:27.2372102Z  * [new ref]         88eb9dcccffcc4cce079ede19f4f1c51a34c5767 -> origin/main
+2025-02-02T23:06:27.2396646Z ##[endgroup]
+2025-02-02T23:06:27.2397196Z ##[group]Determining the checkout info
+2025-02-02T23:06:27.2398968Z ##[endgroup]
+2025-02-02T23:06:27.2403829Z [command]/usr/bin/git sparse-checkout disable
+2025-02-02T23:06:27.2441540Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2025-02-02T23:06:27.2469692Z ##[group]Checking out the ref
+2025-02-02T23:06:27.2473441Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2025-02-02T23:06:28.1039338Z Switched to a new branch 'main'
+2025-02-02T23:06:28.1041770Z branch 'main' set up to track 'origin/main'.
+2025-02-02T23:06:28.1077457Z ##[endgroup]
+2025-02-02T23:06:28.1119284Z [command]/usr/bin/git log -1 --format=%H
+2025-02-02T23:06:28.1142923Z 88eb9dcccffcc4cce079ede19f4f1c51a34c5767
+2025-02-02T23:06:28.1372931Z ##[group]Run actions/setup-node@v4
+2025-02-02T23:06:28.1373241Z with:
+2025-02-02T23:06:28.1373429Z   node-version: 20
+2025-02-02T23:06:28.1373636Z   cache: npm
+2025-02-02T23:06:28.1373831Z   always-auth: false
+2025-02-02T23:06:28.1374047Z   check-latest: false
+2025-02-02T23:06:28.1374541Z   token: ***
+2025-02-02T23:06:28.1374739Z ##[endgroup]
+2025-02-02T23:06:28.3124807Z Found in cache @ /opt/hostedtoolcache/node/20.18.2/x64
+2025-02-02T23:06:28.3131681Z ##[group]Environment details
+2025-02-02T23:06:28.6645408Z node: v20.18.2
+2025-02-02T23:06:28.6645910Z npm: 10.8.2
+2025-02-02T23:06:28.6646248Z yarn: 1.22.22
+2025-02-02T23:06:28.6647052Z ##[endgroup]
+2025-02-02T23:06:28.6667286Z [command]/opt/hostedtoolcache/node/20.18.2/x64/bin/npm config get cache
+2025-02-02T23:06:28.7741260Z /home/runner/.npm
+2025-02-02T23:06:29.1327131Z Cache Size: ~6 MB (6243004 B)
+2025-02-02T23:06:29.1352853Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2b654994-8fa6-4d76-a2cd-1265cc369c3e/cache.tzst -P -C /home/runner/work/Willjianger9.github.io/Willjianger9.github.io --use-compress-program unzstd
+2025-02-02T23:06:29.1499329Z Cache restored successfully
+2025-02-02T23:06:29.1518076Z Cache restored from key: node-cache-Linux-x64-npm-69ee6a17b31387e47acace739234342767b02230e06f76a0f85faa49e7335398
+2025-02-02T23:06:29.9529571Z Received 6243004 of 6243004 (100.0%), 5.9 MBs/sec
+2025-02-02T23:06:29.9639329Z ##[group]Run npm ci
+2025-02-02T23:06:29.9639604Z [36;1mnpm ci[0m
+2025-02-02T23:06:29.9639842Z [36;1mnpm list vite react react-dom[0m
+2025-02-02T23:06:29.9674541Z shell: /usr/bin/bash -e {0}
+2025-02-02T23:06:29.9674853Z ##[endgroup]
+2025-02-02T23:06:33.3983181Z 
+2025-02-02T23:06:33.3984577Z added 215 packages, and audited 216 packages in 3s
+2025-02-02T23:06:33.3987910Z 
+2025-02-02T23:06:33.3988836Z 42 packages are looking for funding
+2025-02-02T23:06:33.3989415Z   run `npm fund` for details
+2025-02-02T23:06:33.3997195Z 
+2025-02-02T23:06:33.3997736Z found 0 vulnerabilities
+2025-02-02T23:06:33.8455280Z william-jiang-portfolio@0.0.0 /home/runner/work/Willjianger9.github.io/Willjianger9.github.io
+2025-02-02T23:06:33.8456656Z ├─┬ @vitejs/plugin-react@4.3.4
+2025-02-02T23:06:33.8457278Z │ └── vite@5.4.14 deduped
+2025-02-02T23:06:33.8457787Z ├─┬ lucide-react@0.321.0
+2025-02-02T23:06:33.8458363Z │ └── react@18.3.1 deduped
+2025-02-02T23:06:33.8458885Z ├─┬ react-dom@18.3.1
+2025-02-02T23:06:33.8459489Z │ └── react@18.3.1 deduped
+2025-02-02T23:06:33.8460114Z ├─┬ react-router-dom@6.29.0
+2025-02-02T23:06:33.8460756Z │ ├── react-dom@18.3.1 deduped
+2025-02-02T23:06:33.8461386Z │ ├─┬ react-router@6.29.0
+2025-02-02T23:06:33.8461979Z │ │ └── react@18.3.1 deduped
+2025-02-02T23:06:33.8462552Z │ └── react@18.3.1 deduped
+2025-02-02T23:06:33.8463102Z ├── react@18.3.1
+2025-02-02T23:06:33.8463540Z └── vite@5.4.14
+2025-02-02T23:06:33.8463774Z 
+2025-02-02T23:06:33.8560586Z ##[group]Run npm run build
+2025-02-02T23:06:33.8560888Z [36;1mnpm run build[0m
+2025-02-02T23:06:33.8561106Z [36;1mls -R dist[0m
+2025-02-02T23:06:33.8589435Z shell: /usr/bin/bash -e {0}
+2025-02-02T23:06:33.8589798Z env:
+2025-02-02T23:06:33.8590068Z   GITHUB_PAGES: true
+2025-02-02T23:06:33.8590277Z ##[endgroup]
+2025-02-02T23:06:33.9701125Z 
+2025-02-02T23:06:33.9701899Z > william-jiang-portfolio@0.0.0 build
+2025-02-02T23:06:33.9703625Z > tsc && vite build
+2025-02-02T23:06:33.9703858Z 
+2025-02-02T23:06:36.2967678Z [36mvite v5.4.14 [32mbuilding for production...[36m[39m
+2025-02-02T23:06:36.5525655Z transforming...
+2025-02-02T23:06:38.7003219Z [32m✓[39m 1469 modules transformed.
+2025-02-02T23:06:38.8679693Z rendering chunks...
+2025-02-02T23:06:38.8736895Z computing gzip size...
+2025-02-02T23:06:38.8802062Z [2mdist/[22m[32mindex.html                [39m[1m[2m  0.57 kB[22m[1m[22m[2m │ gzip:  0.35 kB[22m
+2025-02-02T23:06:38.8803583Z [2mdist/[22m[2massets/[22m[35mindex.css          [39m[1m[2m 19.95 kB[22m[1m[22m[2m │ gzip:  4.65 kB[22m
+2025-02-02T23:06:38.8804726Z [2mdist/[22m[2massets/[22m[36mindex-gUewMEdN.js  [39m[1m[2m191.98 kB[22m[1m[22m[2m │ gzip: 61.06 kB[22m
+2025-02-02T23:06:38.8806480Z [32m✓ built in 2.56s[39m
+2025-02-02T23:06:38.9195040Z dist:
+2025-02-02T23:06:38.9195521Z 404.html
+2025-02-02T23:06:38.9195914Z Hockey_Analytics.png
+2025-02-02T23:06:38.9196369Z Research_Paper.pdf
+2025-02-02T23:06:38.9196794Z Unity_Nonprofits.jpg
+2025-02-02T23:06:38.9197156Z _redirects
+2025-02-02T23:06:38.9197455Z assets
+2025-02-02T23:06:38.9197758Z favicon.svg
+2025-02-02T23:06:38.9198272Z images
+2025-02-02T23:06:38.9198630Z index.html
+2025-02-02T23:06:38.9198967Z resume.pdf
+2025-02-02T23:06:38.9199300Z uril-full.png
+2025-02-02T23:06:38.9199514Z 
+2025-02-02T23:06:38.9199666Z dist/assets:
+2025-02-02T23:06:38.9200040Z William Jiang.jpg
+2025-02-02T23:06:38.9200842Z index-gUewMEdN.js
+2025-02-02T23:06:38.9201216Z index.css
+2025-02-02T23:06:38.9201564Z resume.pdf
+2025-02-02T23:06:38.9201759Z 
+2025-02-02T23:06:38.9201916Z dist/images:
+2025-02-02T23:06:38.9202393Z C74ECB18-483E-42B7-8A14-A30DBBF2CD60.JPG
+2025-02-02T23:06:38.9202876Z DSC05887.JPEG
+2025-02-02T23:06:38.9203211Z DSC09010.JPEG
+2025-02-02T23:06:38.9203537Z IMG_0360.HEIC
+2025-02-02T23:06:38.9203848Z IMG_1343.HEIC
+2025-02-02T23:06:38.9204163Z IMG_1453.HEIC
+2025-02-02T23:06:38.9204689Z IMG_7433.JPG
+2025-02-02T23:06:38.9205010Z IMG_7477.HEIC
+2025-02-02T23:06:38.9205316Z IMG_8725.JPG
+2025-02-02T23:06:38.9205622Z converted
+2025-02-02T23:06:38.9205803Z 
+2025-02-02T23:06:38.9205987Z dist/images/converted:
+2025-02-02T23:06:38.9206402Z gallery_image_1.jpg
+2025-02-02T23:06:38.9206784Z gallery_image_2.jpg
+2025-02-02T23:06:38.9207152Z gallery_image_3.jpg
+2025-02-02T23:06:38.9207515Z gallery_image_4.jpg
+2025-02-02T23:06:38.9207878Z gallery_image_5.jpg
+2025-02-02T23:06:38.9208252Z gallery_image_6.jpg
+2025-02-02T23:06:38.9208667Z gallery_image_7.jpg
+2025-02-02T23:06:38.9209033Z gallery_image_8.jpg
+2025-02-02T23:06:38.9209410Z gallery_image_9.jpg
+2025-02-02T23:06:38.9245304Z ##[group]Run echo "Contents of dist:"
+2025-02-02T23:06:38.9245888Z [36;1mecho "Contents of dist:"[0m
+2025-02-02T23:06:38.9246355Z [36;1mcat dist/index.html[0m
+2025-02-02T23:06:38.9246776Z [36;1mecho "\n\nJS files:"[0m
+2025-02-02T23:06:38.9247247Z [36;1mls dist/assets/*.js[0m
+2025-02-02T23:06:38.9287367Z shell: /usr/bin/bash -e {0}
+2025-02-02T23:06:38.9287789Z ##[endgroup]
+2025-02-02T23:06:38.9350337Z Contents of dist:
+2025-02-02T23:06:38.9360117Z <!DOCTYPE html>
+2025-02-02T23:06:38.9360486Z <html lang="en">
+2025-02-02T23:06:38.9360810Z   <head>
+2025-02-02T23:06:38.9361060Z     <meta charset="UTF-8" />
+2025-02-02T23:06:38.9361453Z     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+2025-02-02T23:06:38.9362249Z     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+2025-02-02T23:06:38.9362739Z     <title>William Jiang</title>
+2025-02-02T23:06:38.9363142Z     <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
+2025-02-02T23:06:38.9363803Z     <script type="module" crossorigin src="/Willjianger9.github.io/assets/index-gUewMEdN.js"></script>
+2025-02-02T23:06:38.9364836Z     <link rel="stylesheet" crossorigin href="/Willjianger9.github.io/assets/index.css">
+2025-02-02T23:06:38.9365233Z   </head>
+2025-02-02T23:06:38.9365412Z   <body>
+2025-02-02T23:06:38.9365597Z     <div id="root"></div>
+2025-02-02T23:06:38.9365876Z   </body>
+2025-02-02T23:06:38.9366113Z </html>\n\nJS files:
+2025-02-02T23:06:38.9373356Z dist/assets/index-gUewMEdN.js
+2025-02-02T23:06:38.9408985Z ##[group]Run actions/configure-pages@v4
+2025-02-02T23:06:38.9409286Z with:
+2025-02-02T23:06:38.9409577Z   token: ***
+2025-02-02T23:06:38.9409782Z   enablement: false
+2025-02-02T23:06:38.9409980Z ##[endgroup]
+2025-02-02T23:06:39.1575499Z ##[group]Run actions/upload-pages-artifact@v3
+2025-02-02T23:06:39.1575818Z with:
+2025-02-02T23:06:39.1576016Z   path: ./dist
+2025-02-02T23:06:39.1576214Z   name: github-pages
+2025-02-02T23:06:39.1576423Z   retention-days: 1
+2025-02-02T23:06:39.1576608Z env:
+2025-02-02T23:06:39.1576779Z   GITHUB_PAGES: true
+2025-02-02T23:06:39.1576973Z ##[endgroup]
+2025-02-02T23:06:39.1645591Z ##[group]Run echo ::group::Archive artifact
+2025-02-02T23:06:39.1645906Z [36;1mecho ::group::Archive artifact[0m
+2025-02-02T23:06:39.1646162Z [36;1mtar \[0m
+2025-02-02T23:06:39.1646397Z [36;1m  --dereference --hard-dereference \[0m
+2025-02-02T23:06:39.1646694Z [36;1m  --directory "$INPUT_PATH" \[0m
+2025-02-02T23:06:39.1646973Z [36;1m  -cvf "$RUNNER_TEMP/artifact.tar" \[0m
+2025-02-02T23:06:39.1647244Z [36;1m  --exclude=.git \[0m
+2025-02-02T23:06:39.1647476Z [36;1m  --exclude=.github \[0m
+2025-02-02T23:06:39.1647702Z [36;1m  .[0m
+2025-02-02T23:06:39.1647899Z [36;1mecho ::endgroup::[0m
+2025-02-02T23:06:39.1788004Z shell: /usr/bin/sh -e {0}
+2025-02-02T23:06:39.1788256Z env:
+2025-02-02T23:06:39.1788445Z   GITHUB_PAGES: true
+2025-02-02T23:06:39.1788837Z   INPUT_PATH: ./dist
+2025-02-02T23:06:39.1789051Z ##[endgroup]
+2025-02-02T23:06:39.1862050Z ##[group]Archive artifact
+2025-02-02T23:06:39.1877011Z ./
+2025-02-02T23:06:39.1877352Z ./_redirects
+2025-02-02T23:06:39.1877732Z ./Unity_Nonprofits.jpg
+2025-02-02T23:06:39.1878098Z ./images/
+2025-02-02T23:06:39.1878453Z ./images/DSC09010.JPEG
+2025-02-02T23:06:39.1912690Z ./images/DSC05887.JPEG
+2025-02-02T23:06:39.1970633Z ./images/IMG_1343.HEIC
+2025-02-02T23:06:39.1986851Z ./images/IMG_7433.JPG
+2025-02-02T23:06:39.2006189Z ./images/C74ECB18-483E-42B7-8A14-A30DBBF2CD60.JPG
+2025-02-02T23:06:39.2012272Z ./images/IMG_0360.HEIC
+2025-02-02T23:06:39.2025337Z ./images/converted/
+2025-02-02T23:06:39.2042905Z ./images/converted/gallery_image_3.jpg
+2025-02-02T23:06:39.2043463Z ./images/converted/gallery_image_2.jpg
+2025-02-02T23:06:39.2072511Z ./images/converted/gallery_image_7.jpg
+2025-02-02T23:06:39.2082095Z ./images/converted/gallery_image_5.jpg
+2025-02-02T23:06:39.2103286Z ./images/converted/gallery_image_8.jpg
+2025-02-02T23:06:39.2110164Z ./images/converted/gallery_image_1.jpg
+2025-02-02T23:06:39.2113180Z ./images/converted/gallery_image_4.jpg
+2025-02-02T23:06:39.2126262Z ./images/converted/gallery_image_6.jpg
+2025-02-02T23:06:39.2146445Z ./images/converted/gallery_image_9.jpg
+2025-02-02T23:06:39.2155110Z ./images/IMG_8725.JPG
+2025-02-02T23:06:39.2171737Z ./images/.DS_Store
+2025-02-02T23:06:39.2195196Z ./images/IMG_1453.HEIC
+2025-02-02T23:06:39.2195579Z ./images/IMG_7477.HEIC
+2025-02-02T23:06:39.2200994Z ./uril-full.png
+2025-02-02T23:06:39.2201359Z ./Hockey_Analytics.png
+2025-02-02T23:06:39.2210581Z ./.DS_Store
+2025-02-02T23:06:39.2210929Z ./Research_Paper.pdf
+2025-02-02T23:06:39.2220664Z ./resume.pdf
+2025-02-02T23:06:39.2221941Z ./favicon.svg
+2025-02-02T23:06:39.2222259Z ./index.html
+2025-02-02T23:06:39.2222559Z ./assets/
+2025-02-02T23:06:39.2222906Z ./assets/William Jiang.jpg
+2025-02-02T23:06:39.2266913Z ./assets/index.css
+2025-02-02T23:06:39.2267317Z ./assets/index-gUewMEdN.js
+2025-02-02T23:06:39.2269141Z ./assets/resume.pdf
+2025-02-02T23:06:39.2270524Z ./404.html
+2025-02-02T23:06:39.2273857Z ##[endgroup]
+2025-02-02T23:06:39.2339878Z ##[group]Run actions/upload-artifact@v4
+2025-02-02T23:06:39.2340148Z with:
+2025-02-02T23:06:39.2340330Z   name: github-pages
+2025-02-02T23:06:39.2340574Z   path: /home/runner/work/_temp/artifact.tar
+2025-02-02T23:06:39.2340848Z   retention-days: 1
+2025-02-02T23:06:39.2341056Z   if-no-files-found: error
+2025-02-02T23:06:39.2341276Z   compression-level: 6
+2025-02-02T23:06:39.2341494Z   overwrite: false
+2025-02-02T23:06:39.2341700Z   include-hidden-files: false
+2025-02-02T23:06:39.2341924Z env:
+2025-02-02T23:06:39.2342098Z   GITHUB_PAGES: true
+2025-02-02T23:06:39.2342293Z ##[endgroup]
+2025-02-02T23:06:39.4445688Z With the provided path, there will be 1 file uploaded
+2025-02-02T23:06:39.4450367Z Artifact name is valid!
+2025-02-02T23:06:39.4451993Z Root directory input is valid!
+2025-02-02T23:06:39.5504983Z Beginning upload of artifact content to blob storage
+2025-02-02T23:06:40.0551917Z Uploaded bytes 8388608
+2025-02-02T23:06:40.3402603Z Uploaded bytes 16777216
+2025-02-02T23:06:40.6181576Z Uploaded bytes 25165824
+2025-02-02T23:06:40.8453611Z Uploaded bytes 33554432
+2025-02-02T23:06:41.0307460Z Uploaded bytes 41943040
+2025-02-02T23:06:41.1209814Z Uploaded bytes 44218326
+2025-02-02T23:06:41.1410956Z Finished uploading artifact content to blob storage!
+2025-02-02T23:06:41.1414751Z SHA256 hash of uploaded artifact zip is 5ebc4757e8b39c42c9e48e34e71791b110400350e2661738445e94ced700a27b
+2025-02-02T23:06:41.1416514Z Finalizing artifact upload
+2025-02-02T23:06:41.2018359Z Artifact github-pages.zip successfully finalized. Artifact ID 2524086518
+2025-02-02T23:06:41.2019754Z Artifact github-pages has been successfully uploaded! Final size is 44218326 bytes. Artifact ID is 2524086518
+2025-02-02T23:06:41.2027138Z Artifact download URL: https://github.com/Willjianger9/Willjianger9.github.io/actions/runs/13103302160/artifacts/2524086518
+2025-02-02T23:06:41.2222739Z Post job cleanup.
+2025-02-02T23:06:41.3774062Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-69ee6a17b31387e47acace739234342767b02230e06f76a0f85faa49e7335398, not saving cache.
+2025-02-02T23:06:41.3870896Z Post job cleanup.
+2025-02-02T23:06:41.4807232Z [command]/usr/bin/git version
+2025-02-02T23:06:41.4844348Z git version 2.48.1
+2025-02-02T23:06:41.4888525Z Temporarily overriding HOME='/home/runner/work/_temp/6bdf03dd-bed4-44e8-b6dc-7c05e3cb7af9' before making global git config changes
+2025-02-02T23:06:41.4890102Z Adding repository directory to the temporary git global config as a safe directory
+2025-02-02T23:06:41.4895337Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Willjianger9.github.io/Willjianger9.github.io
+2025-02-02T23:06:41.4938312Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2025-02-02T23:06:41.4971041Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2025-02-02T23:06:41.5222451Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2025-02-02T23:06:41.5246161Z http.https://github.com/.extraheader
+2025-02-02T23:06:41.5259452Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2025-02-02T23:06:41.5293749Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2025-02-02T23:06:41.5654454Z Cleaning up orphan processes

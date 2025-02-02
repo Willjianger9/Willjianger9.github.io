@@ -1,0 +1,21 @@
+﻿2025-02-02T23:06:28.1372902Z ##[group]Run actions/setup-node@v4
+2025-02-02T23:06:28.1373236Z with:
+2025-02-02T23:06:28.1373425Z   node-version: 20
+2025-02-02T23:06:28.1373633Z   cache: npm
+2025-02-02T23:06:28.1373828Z   always-auth: false
+2025-02-02T23:06:28.1374044Z   check-latest: false
+2025-02-02T23:06:28.1374536Z   token: ***
+2025-02-02T23:06:28.1374736Z ##[endgroup]
+2025-02-02T23:06:28.3124742Z Found in cache @ /opt/hostedtoolcache/node/20.18.2/x64
+2025-02-02T23:06:28.3131661Z ##[group]Environment details
+2025-02-02T23:06:28.6645342Z node: v20.18.2
+2025-02-02T23:06:28.6645901Z npm: 10.8.2
+2025-02-02T23:06:28.6646238Z yarn: 1.22.22
+2025-02-02T23:06:28.6647038Z ##[endgroup]
+2025-02-02T23:06:28.6667264Z [command]/opt/hostedtoolcache/node/20.18.2/x64/bin/npm config get cache
+2025-02-02T23:06:28.7741206Z /home/runner/.npm
+2025-02-02T23:06:29.1327084Z Cache Size: ~6 MB (6243004 B)
+2025-02-02T23:06:29.1352748Z [command]/usr/bin/tar -xf /home/runner/work/_temp/2b654994-8fa6-4d76-a2cd-1265cc369c3e/cache.tzst -P -C /home/runner/work/Willjianger9.github.io/Willjianger9.github.io --use-compress-program unzstd
+2025-02-02T23:06:29.1499312Z Cache restored successfully
+2025-02-02T23:06:29.1518054Z Cache restored from key: node-cache-Linux-x64-npm-69ee6a17b31387e47acace739234342767b02230e06f76a0f85faa49e7335398
+2025-02-02T23:06:29.9529535Z Received 6243004 of 6243004 (100.0%), 5.9 MBs/sec
