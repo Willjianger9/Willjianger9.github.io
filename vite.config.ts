@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
-  base: process.env.GITHUB_PAGES === 'true' ? '/Willjianger9.github.io/' : '/',
+  base: process.env.GITHUB_PAGES === 'true' ? './' : '/',
   plugins: [react()],
   build: {
     outDir: 'dist',
