@@ -16,35 +16,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-      
+
       - name: Install dependencies
-        run: |
-          npm ci
-          npm list vite react react-dom
-      
+        run: npm ci
+
       - name: Build
-        env:
-          GITHUB_PAGES: 'true'
-        run: |
-          npm run build
-          ls -R dist
-      
-      - name: Check build output
-        run: |
-          echo "Contents of dist:"
-          cat dist/index.html
-          echo "\n\nJS files:"
-          ls dist/assets/*.js
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-      
+        run: npm run build
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
