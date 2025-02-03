@@ -22,7 +22,7 @@ const experiences: Experience[] = [
       "Improved development with continuous integration to resolve bugs and enhance app performance.",
       "Integrated designer-created views into the application for a seamless, visually cohesive user experience."
     ],
-    technologies: ["React", "TypeScript", "Node.js", "GraphQL"]
+    technologies: ["Swift", "UIKit", "CI/CD", "Xcode"]
   },
   {
     title: "Lead Website Developer",
