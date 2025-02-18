@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const imageFiles = [
   'gallery_image_1.jpg',
@@ -18,6 +19,16 @@ const About: React.FC = () => {
   const animationFrameRef = useRef<number | null>(null);
   const scrollSpeedRef = useRef(1); // Pixels per frame
   const [isHovering, setIsHovering] = useState(false);
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const imageVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+  };
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -55,7 +66,14 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="relative py-20 bg-transparent overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+      <motion.div 
+        ref={containerRef}
+        className="max-w-6xl mx-auto px-6 relative z-10 about-container"
+        initial="hidden"
+        animate="visible"
+        variants={containerVariants}
+        transition={{ duration: 1.0, ease: 'easeInOut' }}
+      >
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           {/* Profile Picture */}
           <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform transition-transform duration-300 hover:scale-105">
@@ -94,13 +112,16 @@ const About: React.FC = () => {
         {/* Personal Gallery */}
         <div className="mt-16 relative">
           {/* Image Gallery */}
-          <div 
+          <motion.div 
             className="relative w-full overflow-hidden"
+            initial="hidden"
+            animate="visible"
+            variants={containerVariants}
+            transition={{ duration: 1.0, ease: 'easeInOut' }}
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
             <div 
-              ref={containerRef}
               className="flex"
               style={{ 
                 transform: `translateX(-${offset}px)`,
@@ -108,9 +129,13 @@ const About: React.FC = () => {
               }}
             >
               {repeatedImages.map((imageName, index) => (
-                <div 
+                <motion.div 
                   key={`${imageName}-${index}`}
                   className="relative flex-shrink-0 mx-6"
+                  initial="hidden"
+                  animate="visible"
+                  variants={imageVariants}
+                  transition={{ duration: 0.6, delay: index * 0.1, ease: 'easeInOut' }}
                 >
                   {/* Image Container */}
                   <div 
@@ -125,12 +150,12 @@ const About: React.FC = () => {
                       className="w-64 h-64 object-cover rounded-lg"
                     />
                   </div>
-                </div>
+                </motion.div>
               ))}
             </div>
-          </div>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
