@@ -7,33 +7,36 @@ const Navbar: React.FC = () => {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left side - Name */}
         <div className="flex-shrink-0">
-          <a href="/" className="flex items-center gap-2">
-            <span className="text-xl font-bold text-white">William Jiang</span>
+          <a href="/" className="group flex items-center gap-2 relative overflow-hidden">
+            <span className="text-xl font-bold text-white transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-500 group-hover:to-blue-400 group-hover:bg-size-200 group-hover:animate-gradient">William Jiang</span>
+            {/* Border that animates from corners to center */}
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-400 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+            <span className="absolute top-0 right-0 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
           </a>
         </div>
 
         {/* Center - Navigation Links */}
-        <div className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex items-center gap-8 absolute left-1/2 transform -translate-x-1/2">
           <a 
             href="/about" 
-            className="group relative text-base text-gray-300 hover:text-white transition-colors duration-300"
+            className="group relative text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300"
           >
-            About
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+            <span className="inline-block transform transition-transform duration-300 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500">About</span>
+            <span className="absolute bottom-0 left-[-5%] right-[-5%] w-[110%] mx-auto h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
           </a>
           <a 
             href="/experience" 
-            className="group relative text-base text-gray-300 hover:text-white transition-colors duration-300"
+            className="group relative text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300"
           >
-            Experience
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+            <span className="inline-block transform transition-transform duration-300 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500">Experience</span>
+            <span className="absolute bottom-0 left-[-5%] right-[-5%] w-[110%] mx-auto h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
           </a>
           <a 
             href="/projects" 
-            className="group relative text-base text-gray-300 hover:text-white transition-colors duration-300"
+            className="group relative text-lg font-medium text-gray-300 hover:text-white transition-colors duration-300"
           >
-            Projects
-            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
+            <span className="inline-block transform transition-transform duration-300 group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500">Projects</span>
+            <span className="absolute bottom-0 left-[-5%] right-[-5%] w-[110%] mx-auto h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-center"></span>
           </a>
         </div>
 
