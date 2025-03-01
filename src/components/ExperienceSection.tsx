@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Calendar, MapPin } from 'lucide-react';
 
 interface Experience {
@@ -93,6 +93,34 @@ const research: Experience[] = [
 ];
 
 const ExperienceSection: React.FC = () => {
+  const observerRef = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-up', 'opacity-100');
+            observerRef.current?.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    const elements = document.querySelectorAll('.experience-item');
+    elements.forEach((el) => observerRef.current?.observe(el));
+
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
+    };
+  }, []);
+
   return (
     <section className="relative py-20 overflow-hidden" id="experience">
       <div className="max-w-6xl mx-auto px-6">
@@ -107,7 +135,7 @@ const ExperienceSection: React.FC = () => {
           {experiences.map((experience, index) => (
             <div
               key={index}
-              className="relative flex flex-col md:flex-row gap-8 mb-12"
+              className="relative flex flex-col md:flex-row gap-8 mb-12 experience-item opacity-0"
             >
               {/* Timeline dot */}
               <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border-4 border-black/50" />
@@ -168,7 +196,7 @@ const ExperienceSection: React.FC = () => {
           {research.map((researchItem, index) => (
             <div
               key={index}
-              className="relative flex flex-col md:flex-row gap-8 mb-12"
+              className="relative flex flex-col md:flex-row gap-8 mb-12 experience-item opacity-0"
             >
               {/* Timeline dot */}
               <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-green-400 to-teal-500 border-4 border-black/50" />
