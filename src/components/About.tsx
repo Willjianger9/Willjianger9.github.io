@@ -25,19 +25,19 @@ const About: React.FC = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const elements = entry.target.querySelectorAll('.about-animate');
-            elements.forEach((el, index) => {
+            elements.forEach((el) => {
               const group = el.getAttribute('data-group') || '0';
               setTimeout(() => {
-                el.classList.remove('opacity-0');
+                el.classList.remove('opacity-0', 'scale-0');
                 el.classList.add(el.getAttribute('data-animation') || 'animate-fade-up');
-              }, parseFloat(group) * 200);
+              }, parseInt(group) * 200); // Increased delay between animations
             });
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.2,
+        threshold: 0.2, // Increased threshold to start animations a bit later
       }
     );
 
@@ -85,7 +85,7 @@ const About: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           {/* Profile Picture */}
-          <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform transition-transform duration-300 hover:scale-105 about-animate opacity-0" data-animation="animate-fade-in-left" data-group="0">
+          <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform transition-all duration-[1600ms] ease-in-out hover:scale-105 about-animate opacity-0 scale-0" data-animation="animate-scale-in" data-group="0">
             <img 
               src="assets/William Jiang.jpg" 
               alt="William Jiang" 
@@ -94,22 +94,22 @@ const About: React.FC = () => {
           </div>
 
           {/* About Description */}
-          <div className="flex-grow max-w-2xl bg-transparent backdrop-blur-lg p-8 rounded-xl border border-white/10 about-animate opacity-0" data-animation="animate-fade-up" data-group="0.1">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent about-animate opacity-0" data-animation="animate-fade-up" data-group="0.2">
+          <div className="flex-grow max-w-2xl bg-transparent backdrop-blur-lg p-8 rounded-xl border border-white/10">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gradient bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent about-animate opacity-0 transform transition-all duration-700" data-animation="animate-fade-down" data-group="0.2">
               About Me
             </h2>
             <div className="space-y-4 text-white/90 leading-relaxed text-lg">
-              <p className="about-animate opacity-0" data-animation="animate-fade-up" data-group="0.3">
+              <p className="about-animate opacity-0 transform transition-all duration-700" data-animation="animate-fade-up" data-group="0.3">
                 I'm a Computer Science and Engineering student at UCLA, with a passion for software engineering, 
                 computer vision, and machine learning. I'm currently on the lookout for a Summer 2025 internship 
                 to build on what I've learned and dive deeper into new challenges.
               </p>
-              <p className="about-animate opacity-0" data-animation="animate-fade-up" data-group="0.4">
+              <p className="about-animate opacity-0 transform transition-all duration-700" data-animation="animate-fade-up" data-group="0.4">
                 At the moment, I'm doing research at the UCLA Robot Intelligence Lab, where I'm helping develop 
                 cutting-edge AI-driven robotic systems, and at the Interconnected & Integrated Bioelectronics Lab, 
                 where I apply machine learning to metabolic panel analysis for healthcare.
               </p>
-              <p className="about-animate opacity-0" data-animation="animate-fade-up" data-group="0.5">
+              <p className="about-animate opacity-0 transform transition-all duration-700" data-animation="animate-fade-up" data-group="0.5">
                 Before that, I worked as a research assistant at the Vision and Image Processing Lab, where I 
                 created machine learning algorithms to push the boundaries of hockey analytics. When I'm not 
                 immersed in tech, you can find me playing for UCLA's Division II hockey team!

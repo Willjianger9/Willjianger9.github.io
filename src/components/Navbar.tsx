@@ -15,14 +15,26 @@ const Navbar: React.FC = () => {
 
         {/* Center - Navigation Links */}
         <div className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2">
-          <Link to="/about" className="text-base text-gray-300 hover:text-white transition-colors">
+          <Link 
+            to="/about" 
+            className="group relative text-base text-gray-300 hover:text-white transition-colors duration-300"
+          >
             About
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
-          <Link to="/experience" className="text-base text-gray-300 hover:text-white transition-colors">
+          <Link 
+            to="/experience" 
+            className="group relative text-base text-gray-300 hover:text-white transition-colors duration-300"
+          >
             Experience
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
-          <Link to="/projects" className="text-base text-gray-300 hover:text-white transition-colors">
+          <Link 
+            to="/projects" 
+            className="group relative text-base text-gray-300 hover:text-white transition-colors duration-300"
+          >
             Projects
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 group-hover:w-full transition-all duration-300"></span>
           </Link>
         </div>
 

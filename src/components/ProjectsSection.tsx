@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Code, ExternalLink } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
@@ -50,6 +50,41 @@ const projects: Project[] = [
 const ProjectsSection: React.FC = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const elements = entry.target.querySelectorAll('.project-animate');
+            elements.forEach((el) => {
+              const group = el.getAttribute('data-group') || '0';
+              const animation = el.getAttribute('data-animation') || 'animate-fade-up';
+              setTimeout(() => {
+                el.classList.remove('opacity-0');
+                el.classList.add(animation);
+              }, parseInt(group) * 150);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+      }
+    );
+
+    const section = document.getElementById('projects');
+    if (section) {
+      observer.observe(section);
+    }
+
+    return () => {
+      if (section) {
+        observer.unobserve(section);
+      }
+    };
+  }, []);
+
   const handleDemoClick = (project: Project) => {
     if (project.demoUrl) {
       window.open(project.demoUrl, '_blank');
@@ -62,10 +97,10 @@ const ProjectsSection: React.FC = () => {
     <section className="relative py-20 overflow-hidden" id="projects">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 project-animate opacity-0" data-animation="animate-fade-down" data-group="0">
             Featured Projects
           </h2>
-          <p className="text-gray-300 max-w-2xl mx-auto">
+          <p className="text-gray-300 max-w-2xl mx-auto project-animate opacity-0" data-group="1">
             Here are some of my recent projects. Each one represents a unique challenge and demonstrates different aspects of my skills.
           </p>
         </div>
@@ -74,7 +109,8 @@ const ProjectsSection: React.FC = () => {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-black/30 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40"
+              className="bg-black/30 backdrop-blur-sm rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40 project-animate opacity-0"
+              data-group={index + 2}
             >
               <div 
                 className="aspect-video rounded-t-lg"

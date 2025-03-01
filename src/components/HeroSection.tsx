@@ -12,7 +12,7 @@ const HeroSection: React.FC = () => {
         setTimeout(() => {
           el.classList.remove('opacity-0');
           el.classList.add(el.getAttribute('data-animation') || 'animate-fade-up');
-        }, parseFloat(group) * 200); // Support decimal groups for finer timing control
+        }, parseInt(group) * 100); // Reduced to 100ms stagger between groups
       });
     }, 100);
 
