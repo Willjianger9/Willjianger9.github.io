@@ -129,7 +129,7 @@ const ExperienceSection: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-in-left', 'opacity-100');
+            entry.target.classList.add('animate-fade-up', 'opacity-100');
             titleObserver.unobserve(entry.target);
           }
         });
