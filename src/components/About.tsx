@@ -14,10 +14,15 @@ const imageFiles = [
 
 const About: React.FC = () => {
   const profilePicRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
+  const galleryInnerRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   const animationFrameRef = useRef<number | null>(null);
-  const scrollSpeedRef = useRef(1); // Pixels per frame
+  const scrollSpeedRef = useRef(1); 
   const [isHovering, setIsHovering] = useState(false);
+  const [galleryWidth, setGalleryWidth] = useState(0);
+  const [itemWidth, setItemWidth] = useState(0);
+  const [totalWidth, setTotalWidth] = useState(0);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -81,12 +86,50 @@ const About: React.FC = () => {
     };
   }, []);
 
+  // Initialize and update gallery dimensions
   useEffect(() => {
+    const updateDimensions = () => {
+      if (galleryRef.current && galleryInnerRef.current) {
+        const containerWidth = galleryRef.current.clientWidth;
+        setGalleryWidth(containerWidth);
+        
+        // Calculate the width of a single gallery item including margins
+        const galleryItem = galleryRef.current.querySelector('.gallery-item') as HTMLElement;
+        if (galleryItem) {
+          const computedStyle = window.getComputedStyle(galleryItem);
+          const marginLeft = parseFloat(computedStyle.marginLeft || '0');
+          const marginRight = parseFloat(computedStyle.marginRight || '0');
+          const singleItemWidth = galleryItem.offsetWidth + marginLeft + marginRight;
+          setItemWidth(singleItemWidth);
+          
+          // Calculate total width of all original images
+          const totalOriginalWidth = singleItemWidth * imageFiles.length;
+          setTotalWidth(totalOriginalWidth);
+        }
+      }
+    };
+
+    // Initial update
+    updateDimensions();
+    
+    // Add resize listener
+    window.addEventListener('resize', updateDimensions);
+    
+    return () => {
+      window.removeEventListener('resize', updateDimensions);
+    };
+  }, []);
+
+  // Handle the infinite scrolling animation
+  useEffect(() => {
+    if (totalWidth === 0) return; // Wait until we have dimensions
+    
     const animate = () => {
-      if (!isHovering) {
+      if (!isHovering && totalWidth > 0) {
         setOffset(prevOffset => {
+          // When we've scrolled past one complete set, reset to create seamless loop
           const newOffset = prevOffset + scrollSpeedRef.current;
-          return newOffset >= (imageFiles.length * 68) ? 0 : newOffset;
+          return newOffset >= totalWidth ? 0 : newOffset;
         });
       }
       animationFrameRef.current = requestAnimationFrame(animate);
@@ -99,9 +142,10 @@ const About: React.FC = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, [isHovering]);
+  }, [isHovering, totalWidth]);
 
-  const repeatedImages = [...imageFiles, ...imageFiles];
+  // Create three sets of images to ensure seamless looping
+  const repeatedImages = [...imageFiles, ...imageFiles, ...imageFiles];
 
   return (
     <section id="about" className="relative py-20 bg-transparent overflow-hidden">
@@ -149,21 +193,24 @@ const About: React.FC = () => {
         <div className="mt-16 relative">
           {/* Image Gallery */}
           <div 
+            ref={galleryRef}
             className="relative w-full overflow-hidden"
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
           >
             <div 
+              ref={galleryInnerRef}
               className="flex"
               style={{ 
                 transform: `translateX(-${offset}px)`,
-                transition: 'transform linear'
+                transition: isHovering ? 'transform 0.2s ease-out' : 'none'  // Smooth pause on hover
               }}
             >
               {repeatedImages.map((imageName, index) => (
                 <div 
                   key={`${imageName}-${index}`}
-                  className="relative flex-shrink-0 mx-6"
+                  className="gallery-item relative flex-shrink-0 mx-3 sm:mx-4 md:mx-6"  // Responsive margins
+                  style={{ width: 'auto' }} // Let the image container size itself
                 >
                   {/* Image Container */}
                   <div 
@@ -175,7 +222,7 @@ const About: React.FC = () => {
                     <img 
                       src={`/images/converted/${imageName}`} 
                       alt={`Gallery image ${index + 1}`}
-                      className="w-64 h-64 object-cover rounded-lg"
+                      className="w-40 h-40 sm:w-52 sm:h-52 md:w-64 md:h-64 object-cover rounded-lg" // Responsive image sizing
                     />
                   </div>
                 </div>
