@@ -14,6 +14,14 @@ interface Project {
 
 const projects: Project[] = [
   {
+    title: "Plant Portal",
+    description: "A virtual garden platform that combines AI and 3D visualization to promote environmental sustainability. Users can upload real plants, which are identified by Gemini and added to their personal 3D garden, while tracking their contribution to carbon reduction. Features secure authentication, real-time plant recognition, and an interactive 3D environment.",
+    technologies: ["React/Vite", "Three.js", "TailwindCSS", "MongoDB", "JWT", "Gemini API"],
+    image: "PlantPortal.jpg",
+    codeUrl: "https://github.com/dwu006/scuhacks",
+    demoUrl: "https://devpost.com/software/plant-portal"
+  },
+  {
     title: "URIL Website",
     description: "Designed and developed UCLA Robot Intelligence Laboratory's website, showcasing research in robot learning, human-robot collaboration, and autonomous systems.The site features project descriptions, team profiles, and publication archives.",
     technologies: ["HTML", "CSS", "JavaScript", "GitHub"],
