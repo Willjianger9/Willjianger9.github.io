@@ -13,7 +13,7 @@ const imageFiles = [
 ];
 
 const About: React.FC = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const profilePicRef = useRef<HTMLDivElement>(null);
   const [offset, setOffset] = useState(0);
   const animationFrameRef = useRef<number | null>(null);
   const scrollSpeedRef = useRef(1); // Pixels per frame
@@ -27,43 +27,66 @@ const About: React.FC = () => {
             const elements = entry.target.querySelectorAll('.about-animate');
             elements.forEach((el) => {
               const group = el.getAttribute('data-group') || '0';
+              const animation = el.getAttribute('data-animation') || 'animate-fade-up';
+              
               setTimeout(() => {
-                el.classList.remove('opacity-0', 'scale-0');
-                el.classList.add(el.getAttribute('data-animation') || 'animate-fade-up');
-              }, parseInt(group) * 200); // Increased delay between animations
+                el.classList.remove('opacity-0');
+                el.classList.add(animation);
+              }, parseFloat(group) * 200);
             });
+            
+            // Handle special animation for profile picture
+            if (profilePicRef.current) {
+              setTimeout(() => {
+                animateProfilePic();
+              }, 100);
+            }
+            
             observer.unobserve(entry.target);
           }
         });
       },
-      {
-        threshold: 0.2, // Increased threshold to start animations a bit later
-      }
+      { threshold: 0.1 }
     );
 
-    const section = document.getElementById('about');
-    if (section) {
-      observer.observe(section);
+    const animateProfilePic = () => {
+      if (!profilePicRef.current) return;
+      
+      const profilePic = profilePicRef.current;
+      
+      // Create smoother animation with keyframes
+      profilePic.animate([
+        { transform: 'scale(0)', opacity: '0' },
+        { transform: 'scale(0.6)', opacity: '0.7', offset: 0.4 },
+        { transform: 'scale(1.06)', opacity: '1', offset: 0.7 },
+        { transform: 'scale(0.98)', opacity: '1', offset: 0.85 },
+        { transform: 'scale(1.01)', opacity: '1', offset: 0.92 },
+        { transform: 'scale(1)', opacity: '1' }
+      ], {
+        duration: 2400,
+        easing: 'cubic-bezier(0.18, 1, 0.32, 1)',
+        fill: 'forwards'
+      });
+    };
+
+    const aboutSection = document.getElementById('about');
+    if (aboutSection) {
+      observer.observe(aboutSection);
     }
 
     return () => {
-      if (section) {
-        observer.unobserve(section);
+      if (aboutSection) {
+        observer.unobserve(aboutSection);
       }
     };
   }, []);
 
   useEffect(() => {
-    if (!containerRef.current) return;
-
-    const container = containerRef.current;
-    const containerWidth = container.scrollWidth / 2;
-
     const animate = () => {
       if (!isHovering) {
         setOffset(prevOffset => {
           const newOffset = prevOffset + scrollSpeedRef.current;
-          return newOffset >= containerWidth ? 0 : newOffset;
+          return newOffset >= (imageFiles.length * 68) ? 0 : newOffset;
         });
       }
       animationFrameRef.current = requestAnimationFrame(animate);
@@ -85,7 +108,11 @@ const About: React.FC = () => {
       <div className="max-w-6xl mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between space-y-8 md:space-y-0 md:space-x-12">
           {/* Profile Picture */}
-          <div className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform transition-all duration-[1600ms] ease-in-out hover:scale-105 about-animate opacity-0 scale-0" data-animation="animate-scale-in" data-group="0">
+          <div 
+            ref={profilePicRef}
+            className="flex-shrink-0 w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white/20 shadow-xl transform hover:scale-105 transition-transform duration-300 ease-in-out opacity-0" 
+            data-group="0"
+          >
             <img 
               src="assets/William Jiang.jpg" 
               alt="William Jiang" 
@@ -127,7 +154,6 @@ const About: React.FC = () => {
             onMouseLeave={() => setIsHovering(false)}
           >
             <div 
-              ref={containerRef}
               className="flex"
               style={{ 
                 transform: `translateX(-${offset}px)`,
