@@ -26,27 +26,6 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Gradient animation for the navbar */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animate-gradient {
-  animation: gradient 3s ease infinite;
-}
-
-.bg-size-200 {
-  background-size: 200% 200%;
-}
-
 @layer base {
   :root {
     --muted: 210 40% 96.1%;

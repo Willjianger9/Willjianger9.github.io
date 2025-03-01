@@ -7,11 +7,8 @@ const Navbar: React.FC = () => {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Left side - Name */}
         <div className="flex-shrink-0">
-          <a href="/" className="group flex items-center gap-2 relative overflow-hidden">
-            <span className="text-xl font-bold text-white transition-all duration-300 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:via-purple-500 group-hover:to-blue-400 group-hover:bg-size-200 group-hover:animate-gradient">William Jiang</span>
-            {/* Border that animates from corners to center */}
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-blue-400 group-hover:w-full transition-all duration-300 ease-in-out"></span>
-            <span className="absolute top-0 right-0 w-0 h-[2px] bg-purple-500 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+          <a href="/" className="flex items-center gap-2 group">
+            <span className="text-xl font-bold text-white transition-all duration-300 transform group-hover:scale-110 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-blue-400 group-hover:to-purple-500">William Jiang</span>
           </a>
         </div>
 
