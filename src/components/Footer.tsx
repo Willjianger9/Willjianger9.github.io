@@ -19,6 +19,27 @@ const Footer: React.FC = () => {
               <Github className="w-5 h-5" />
             </a>
             <a
+              href="https://x.com/Willjianger9"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
+              <svg 
+                width="20" 
+                height="20" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                xmlns="http://www.w3.org/2000/svg"
+                className="text-gray-400 group-hover:text-white"
+                style={{ color: 'currentColor' }}
+              >
+                <path 
+                  d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z" 
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
               href="mailto:jiangwil@g.ucla.edu"
               className="text-gray-400 hover:text-white transition-colors"
             >
