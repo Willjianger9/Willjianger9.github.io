@@ -100,7 +100,20 @@ const ExperienceSection: React.FC = () => {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('animate-fade-up', 'opacity-100');
+            // Find the content container and dot within this item
+            const contentContainer = entry.target.querySelector('.content-container');
+            const dot = entry.target.querySelector('.timeline-dot');
+            
+            // Animate the content container
+            if (contentContainer) {
+              contentContainer.classList.add('animate-fade-up', 'opacity-100');
+            }
+            
+            // Animate the dot
+            if (dot) {
+              dot.classList.add('animate-scale-in');
+            }
+            
             observerRef.current?.unobserve(entry.target);
           }
         });
@@ -135,13 +148,13 @@ const ExperienceSection: React.FC = () => {
           {experiences.map((experience, index) => (
             <div
               key={index}
-              className="relative flex flex-col md:flex-row gap-8 mb-12 experience-item opacity-0"
+              className="relative flex flex-col md:flex-row gap-8 mb-12 experience-item"
             >
               {/* Timeline dot */}
-              <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border-4 border-black/50" />
+              <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border-4 border-black/50 scale-0 timeline-dot" />
               
               {/* Content */}
-              <div className="flex-1 md:ml-[60px]">
+              <div className="flex-1 md:ml-[60px] opacity-0 content-container">
                 <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40">
                   <h3 className="text-xl font-semibold text-white mb-1">
                     {experience.title}
@@ -196,13 +209,13 @@ const ExperienceSection: React.FC = () => {
           {research.map((researchItem, index) => (
             <div
               key={index}
-              className="relative flex flex-col md:flex-row gap-8 mb-12 experience-item opacity-0"
+              className="relative flex flex-col md:flex-row gap-8 mb-12 experience-item"
             >
               {/* Timeline dot */}
-              <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-green-400 to-teal-500 border-4 border-black/50" />
+              <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-green-400 to-teal-500 border-4 border-black/50 scale-0 timeline-dot" />
               
               {/* Content */}
-              <div className="flex-1 md:ml-[60px]">
+              <div className="flex-1 md:ml-[60px] opacity-0 content-container">
                 <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40">
                   <h3 className="text-xl font-semibold text-white mb-1">
                     {researchItem.title}
