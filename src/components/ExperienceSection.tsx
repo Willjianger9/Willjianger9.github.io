@@ -102,20 +102,18 @@ const ExperienceSection: React.FC = () => {
         
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-[2px] bg-gradient-to-b from-blue-400/80 to-purple-500/80" />
+          <div className="absolute left-[18px] md:left-[18px] h-full w-[2px] bg-gradient-to-b from-blue-400/80 to-purple-500/80" />
           
           {experiences.map((experience, index) => (
             <div
               key={index}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
+              className="relative flex flex-col md:flex-row gap-8 mb-12"
             >
               {/* Timeline dot */}
-              <div className="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border-4 border-black/50" />
+              <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-blue-400 to-purple-500 border-4 border-black/50" />
               
               {/* Content */}
-              <div className="flex-1 md:w-1/2">
+              <div className="flex-1 md:ml-[60px]">
                 <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40">
                   <h3 className="text-xl font-semibold text-white mb-1">
                     {experience.title}
@@ -155,9 +153,6 @@ const ExperienceSection: React.FC = () => {
                   )}
                 </div>
               </div>
-              
-              {/* Spacer for alternating layout */}
-              <div className="flex-1 md:w-1/2" />
             </div>
           ))}
         </div>
@@ -168,20 +163,18 @@ const ExperienceSection: React.FC = () => {
         
         <div className="relative">
           {/* Vertical line */}
-          <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-[2px] bg-gradient-to-b from-green-400/80 to-teal-500/80" />
+          <div className="absolute left-[18px] md:left-[18px] h-full w-[2px] bg-gradient-to-b from-green-400/80 to-teal-500/80" />
           
           {research.map((researchItem, index) => (
             <div
               key={index}
-              className={`relative flex flex-col md:flex-row gap-8 mb-12 ${
-                index % 2 === 0 ? 'md:flex-row-reverse' : ''
-              }`}
+              className="relative flex flex-col md:flex-row gap-8 mb-12"
             >
               {/* Timeline dot */}
-              <div className="absolute left-[-9px] md:left-1/2 md:-translate-x-1/2 w-5 h-5 rounded-full bg-gradient-to-r from-green-400 to-teal-500 border-4 border-black/50" />
+              <div className="absolute left-[8px] md:left-[8px] w-[20px] h-[20px] rounded-full bg-gradient-to-r from-green-400 to-teal-500 border-4 border-black/50" />
               
               {/* Content */}
-              <div className="flex-1 md:w-1/2">
+              <div className="flex-1 md:ml-[60px]">
                 <div className="bg-black/30 backdrop-blur-sm p-6 rounded-lg border border-white/10 hover:border-white/20 transition-all hover:bg-black/40">
                   <h3 className="text-xl font-semibold text-white mb-1">
                     {researchItem.title}
@@ -221,9 +214,6 @@ const ExperienceSection: React.FC = () => {
                   )}
                 </div>
               </div>
-              
-              {/* Spacer for alternating layout */}
-              <div className="flex-1 md:w-1/2" />
             </div>
           ))}
         </div>
