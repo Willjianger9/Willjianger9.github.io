@@ -96,7 +96,8 @@ const ExperienceSection: React.FC = () => {
   const observerRef = useRef<IntersectionObserver | null>(null);
 
   useEffect(() => {
-    observerRef.current = new IntersectionObserver(
+    // Create observers for both items and titles
+    const itemObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -114,7 +115,7 @@ const ExperienceSection: React.FC = () => {
               dot.classList.add('animate-scale-in');
             }
             
-            observerRef.current?.unobserve(entry.target);
+            itemObserver.unobserve(entry.target);
           }
         });
       },
@@ -124,20 +125,39 @@ const ExperienceSection: React.FC = () => {
       }
     );
 
+    const titleObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-fade-in-left', 'opacity-100');
+            titleObserver.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      }
+    );
+
+    // Observe experience items
     const elements = document.querySelectorAll('.experience-item');
-    elements.forEach((el) => observerRef.current?.observe(el));
+    elements.forEach((el) => itemObserver.observe(el));
+
+    // Observe section titles
+    const titles = document.querySelectorAll('.section-title');
+    titles.forEach((el) => titleObserver.observe(el));
 
     return () => {
-      if (observerRef.current) {
-        observerRef.current.disconnect();
-      }
+      itemObserver.disconnect();
+      titleObserver.disconnect();
     };
   }, []);
 
   return (
     <section className="relative py-20 overflow-hidden" id="experience">
       <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-white mb-12 text-center">
+        <h2 className="text-3xl font-bold text-white mb-12 text-center opacity-0 section-title">
           Experience
         </h2>
         
@@ -198,7 +218,7 @@ const ExperienceSection: React.FC = () => {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold text-white my-12 text-center">
+        <h2 className="text-3xl font-bold text-white my-12 text-center opacity-0 section-title">
           Research
         </h2>
         
